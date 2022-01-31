@@ -1,7 +1,7 @@
-# Note-6
+# Note-8
 
-## declaring Function & function signature
+## class
 
-- declaring function and setting types for function parameter and return type
-
-- function signature: It is a process by you can actually create a blueprint of a function that what will be the type or return value of the function.
+- declaring class
+- access modifiers in class
+- short hand way to write class in ts
