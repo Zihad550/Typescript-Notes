@@ -1,3 +1,5 @@
-# Note-6
+# Note-7
 
-## declaring Function
+## Type Aliases
+
+- It is a process of writing all the common types on one place.
