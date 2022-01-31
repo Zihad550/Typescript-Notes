@@ -1,14 +1,19 @@
 "use strict";
-var RType;
-(function (RType) {
-    RType[RType["SUCCESS"] = 0] = "SUCCESS";
-    RType[RType["FAILURE"] = 1] = "FAILURE";
-    RType[RType["UNAUTHENTICATED"] = 2] = "UNAUTHENTICATED";
-    RType[RType["FORBIDDEN"] = 3] = "FORBIDDEN";
-})(RType || (RType = {}));
+const addId = (obj) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { id });
+};
+let user = addId({
+    name: "Jehad",
+    age: 40,
+    country: "bangladesh",
+});
+console.log(user.id);
+console.log(user.name);
+console.log(user.country);
 const response1 = {
     status: 200,
-    type: RType.SUCCESS,
+    type: "Good",
     data: {
         name: "Jehad",
         something: 300,
@@ -16,6 +21,6 @@ const response1 = {
 };
 const response2 = {
     status: 200,
-    type: RType.FAILURE,
+    type: "Great",
     data: "Error",
 };
