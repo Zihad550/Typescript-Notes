@@ -1,22 +1,20 @@
 import { Player } from "./classes/Player.js";
-const tamim = new Player("Tamim", 18, "Bangladesh");
-const sakib = new Player("Sakib", 20, "Bangladesh");
+function drawRectangle(options) {
+    let width = options.width;
+    let length = options.length;
+}
+let threeDOptions = {
+    width: 30,
+    length: 30,
+    height: 40,
+};
+drawRectangle(threeDOptions);
+const rabbi = new Player("Rabbi", 20, "Bangladesh");
+let sakib;
+sakib = new Player("sakib", 25, "Bandladesh");
+console.log(rabbi);
+console.log(sakib);
 const players = [];
+players.push(rabbi);
 players.push(sakib);
 console.log(players);
-tamim.name = "Mushfiq";
-console.log(tamim.name);
-class Person {
-    constructor(name, age, country, gender) {
-        this.name = name;
-        this.age = age;
-        this.country = country;
-        this.gender = gender;
-    }
-    detail() {
-        console.log(`${this.name} is from ${this.country}. ${this.gender === "Male" ? "Boy" : "Girl"}`);
-    }
-}
-const Jehad = new Person("Jehad", 18, "Bangladesh", "Male");
-Jehad.detail();
-console.log(Jehad);

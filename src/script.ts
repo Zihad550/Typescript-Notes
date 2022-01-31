@@ -1,35 +1,39 @@
 import { Player } from "./classes/Player.js";
-// todo: if you give wring type value then it will give error
-const tamim = new Player("Tamim", 18, "Bangladesh");
-const sakib = new Player("Sakib", 20, "Bangladesh");
+import { IsPlayer } from "./interfaces/IsPlayer.js";
 
-// todo: we can use the class as an type
-const players: Player[] = [];
-// ! players.push('sakib')  you cannot do this
-players.push(sakib);
-console.log(players);
+//************* using interface on Functions */
 
-tamim.name = "Mushfiq";
-console.log(tamim.name);
-
-class Person {
-  constructor(
-    private name: string,
-    public age: number,
-    readonly country: string,
-    public gender: string
-  ) {}
-
-  detail() {
-    console.log(
-      `${this.name} is from ${this.country}. ${
-        this.gender === "Male" ? "Boy" : "Girl"
-      }`
-    );
-  }
+interface RectangleOptions {
+  width: number;
+  length: number;
+}
+function drawRectangle(options: RectangleOptions) {
+  let width = options.width;
+  let length = options.length;
 }
 
-const Jehad = new Person("Jehad", 18, "Bangladesh", "Male");
+//! drawRectangle({ width: 30, length: 30, height: 30 });
 
-Jehad.detail();
-console.log(Jehad);
+// if you pass and object then and pass reference then it will not give error
+let threeDOptions = {
+  width: 30,
+  length: 30,
+  height: 40,
+};
+
+drawRectangle(threeDOptions);
+
+// ************ player class is using IsPlayer interface and here sakib object is also using the IsPlayer interface
+const rabbi = new Player("Rabbi", 20, "Bangladesh");
+let sakib: IsPlayer;
+sakib = new Player("sakib", 25, "Bandladesh");
+
+console.log(rabbi);
+console.log(sakib);
+
+// *************** using interface on array
+const players: IsPlayer[] = [];
+
+players.push(rabbi);
+players.push(sakib);
+console.log(players);

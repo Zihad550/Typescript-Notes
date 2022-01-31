@@ -1,13 +1,10 @@
-# Note-9
+# Note-10
 
-## Module System
+## working with interface
 
-- export ,import: to use something from another file use import. To be used into another file use export.
+- What is interface: Our value, variable which we will use on programming. we can define a structure for them using interface.s
 
-- then you have to do two things to make it moduler.
-  - edit tsconfig file
-    - target = es6
-    - module = es2015
-    - edit your index.html script tag write
-      `<script type="module" src="./output/script.js" ></script>`
-    - the trickiest thing: You have to import .js file not .ts file on your main ts file
+- check the script.ts file for function interface
+- check interface folder and player.ts file for class interface
+
+- it's work is just to give shape to our code. Structure it more perfectly

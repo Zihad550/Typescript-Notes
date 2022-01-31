@@ -1,11 +1,15 @@
-export class Player {
-  name: string;
-  age: number;
-  country: string;
-  constructor(n: string, a: number, c: string) {
-    this.name = n;
-    this.age = a;
-    this.country = c;
+import { IsPlayer } from "../interfaces/IsPlayer.js";
+// ******* using interface on class
+export class Player implements IsPlayer {
+  // only public values of class are available for interface
+  constructor(
+    public name: string,
+    private age: number,
+    readonly country: string
+  ) {}
+  // to make a private property you can store it on a method and make it private
+  getProperty() {
+    return this.age;
   }
 
   play() {
