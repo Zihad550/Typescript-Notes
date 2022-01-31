@@ -21,8 +21,12 @@
   - suffers type coercion. Like you can add integer with number, add boolean with number.
 
 - Benefits of Typescript
+
   - typescript = javascript
   - compiles to javascript - runs everywhere
   - familiar object oriented programming
   - new features work everywhere
-  -
+
+- Why we use small letter to declare types and why it is different in declaring function type?
+  Object, Array, String, Number are reserved words of JavaScript. So TypeScript cannot use them. That's why it uses object, array, string, number to declare types.  
+  But function is a reserved word of JavaScript. That's why when we declare function on TypeScript we write Function. Write in capital letter.
