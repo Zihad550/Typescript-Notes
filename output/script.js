@@ -5,5 +5,6 @@ myFunc = () => {
 };
 const anotherFunc = (a, b, c, d = 18) => {
     console.log(`${a} is ${b} years old `);
+    return a;
 };
 anotherFunc("Jehad", 18);
