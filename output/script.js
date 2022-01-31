@@ -1,20 +1,26 @@
-import { Player } from "./classes/Player.js";
-function drawRectangle(options) {
-    let width = options.width;
-    let length = options.length;
-}
-let threeDOptions = {
-    width: 30,
-    length: 30,
-    height: 40,
+"use strict";
+const addId = (obj) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { id });
 };
-drawRectangle(threeDOptions);
-const rabbi = new Player("Rabbi", 20, "Bangladesh");
-let sakib;
-sakib = new Player("sakib", 25, "Bandladesh");
-console.log(rabbi);
-console.log(sakib);
-const players = [];
-players.push(rabbi);
-players.push(sakib);
-console.log(players);
+let user = addId({
+    name: "Jehad",
+    age: 40,
+    country: "bangladesh",
+});
+console.log(user.id);
+console.log(user.name);
+console.log(user.country);
+const response1 = {
+    status: 200,
+    type: "Good",
+    data: {
+        name: "Jehad",
+        something: 300,
+    },
+};
+const response2 = {
+    status: 200,
+    type: "Great",
+    data: "Error",
+};

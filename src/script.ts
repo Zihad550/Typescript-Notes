@@ -1,39 +1,69 @@
-import { Player } from "./classes/Player.js";
-import { IsPlayer } from "./interfaces/IsPlayer.js";
-
-//************* using interface on Functions */
-
-interface RectangleOptions {
-  width: number;
-  length: number;
-}
-function drawRectangle(options: RectangleOptions) {
-  let width = options.width;
-  let length = options.length;
-}
-
-//! drawRectangle({ width: 30, length: 30, height: 30 });
-
-// if you pass and object then and pass reference then it will not give error
-let threeDOptions = {
-  width: 30,
-  length: 30,
-  height: 40,
+// ****************** Using generic on function *
+/* todo:
+const addId = (obj: object) => {
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
 };
 
-drawRectangle(threeDOptions);
+let user = addId({
+  name: "Jehad",
+  age: 40,
+  country: "bangladesh",
+});
+ */
+//* we have passes name age and country but we can access only id
+// console.log(user.id);
+//* we can get the value but it is not getting the type for this
+/* 
+console.log(user.name); 
+console.log(user.country); 
+*/
 
-// ************ player class is using IsPlayer interface and here sakib object is also using the IsPlayer interface
-const rabbi = new Player("Rabbi", 20, "Bangladesh");
-let sakib: IsPlayer;
-sakib = new Player("sakib", 25, "Bandladesh");
+// ** to solve this
+// here you can use anything inside <> but it is convension is using <T> inside
+// it is used to capture all the types what users is giving
 
-console.log(rabbi);
-console.log(sakib);
+// here is also a problem you can pass any value.
+// to solve this
+const addId = <
+  T extends {
+    name: string;
+    age: number;
+  }
+>(
+  obj: T
+) => {
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
+};
 
-// *************** using interface on array
-const players: IsPlayer[] = [];
+let user = addId({
+  name: "Jehad",
+  age: 40,
+  country: "bangladesh",
+});
+console.log(user.id);
+console.log(user.name);
+console.log(user.country);
 
-players.push(rabbi);
-players.push(sakib);
-console.log(players);
+//************** Using Generic on interface */
+// you can actually dynamically get the type and set it
+interface APIResponse<T> {
+  status: number;
+  type: string;
+  data: T;
+}
+const response1: APIResponse<object> = {
+  status: 200,
+  type: "Good",
+  data: {
+    name: "Jehad",
+    something: 300,
+  },
+};
+
+const response2: APIResponse<string> = {
+  status: 200,
+  type: "Great",
+  data: "Error",
+};
