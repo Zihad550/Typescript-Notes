@@ -1,28 +1,11 @@
-enum RType {
-  SUCCESS,
-  FAILURE,
-  UNAUTHENTICATED,
-  FORBIDDEN,
-}
-interface APIResponse<T> {
-  status: number;
-  type: RType;
-  data: T;
-}
-const response1: APIResponse<object> = {
-  status: 200,
-  type: RType.FAILURE,
-  data: {
-    name: "Jehad",
-    something: 300,
-  },
-};
+// tuples
 
-const response2: APIResponse<string> = {
-  status: 200,
-  type: RType.SUCCESS,
-  data: "Error",
-};
+let a = [3, "hello", { p: 1 }];
+// by default typescript sets types on a array we can change types or push only three types of data, string, number and object
+a[1] = 1; // here on the second opsition we have string but we can set number
+//todo: a[0] = true // this will give error because we have three types and it does not fits one of them
 
-console.log(response1);
-console.log(response2);
+// ************* if we need that every element an array will have defined type then we can use tuples
+
+let b: [number, string, object] = [4, "hello", { t: 1 }];
+//todo: b[0] = 'string' // you cannot do this because you have set that the first element will be a number type

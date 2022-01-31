@@ -1,5 +1,3 @@
-# Note-12
+# Note-13
 
-# Enum Types
-
-- watch the script.ts file for examples
+## Tuples
