@@ -30,3 +30,7 @@
 - Why we use small letter to declare types and why it is different in declaring function type?
   Object, Array, String, Number are reserved words of JavaScript. So TypeScript cannot use them. That's why it uses object, array, string, number to declare types.  
   But function is a reserved word of JavaScript. That's why when we declare function on TypeScript we write Function. Write in capital letter.
+
+- Difference between undefined and void:
+  - undefined: when we don't return anything from a function on JavaScript it returns undefined. undefine means the value is not defined.
+  - void: when we don't return anything from a function on TypeScript it returns void. Void means nothing. The value is completely absent.
