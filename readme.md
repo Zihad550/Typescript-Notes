@@ -1,5 +1,5 @@
-# Note-11
+# Note-12
 
-## Working with Generics
+# Enum Types
 
-- What is generic: You can pass type dynamically. Like you don't know what will be the type of data. Then you can use it to set the data type dynamically.
+- watch the script.ts file for examples
